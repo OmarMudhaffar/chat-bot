@@ -1,14 +1,46 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      رسل
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content >
+
+<div class="mcont">
+
+  <ion-list #content>
+
+<div class="all" *ngFor="let item of bot"> 
+
+  <div [class]="item.class" >
+    <div class="logo">
+        <img [src]="item.img">
+    </div>
+  
+    <div class="message">
+     <p>
+   {{item.text}}
+     
+     </p>
+    </div>
+  </div>
+
+</div>
+
+</ion-list>
+
+</div>
+
+
+
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-input class="myinput" type="text" placeholder="اكتب رسالتك هنا" [(ngModel)]="mytext" (click)="scroll()" ></ion-input>
+      <p class="send" (click)="sendMessage()">ارسال</p> 
+  </ion-toolbar>
+</ion-footer>
